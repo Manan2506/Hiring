@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>{{ book.title }}</h1>
+  <p><strong>Author:</strong> {{ book.author }}</p>
+  <p><strong>Published:</strong> {{ book.published_date }}</p>
+  <p><strong>Description:</strong> {{ book.description }}</p>
+  <a href="{% url 'edit_book' book.id %}"><button>Edit Book Details</button></a>
+  <form action="{% url 'delete_book' book.id %}" method="POST" onsubmit="return confirm('Are you sure you want to delete this book?');">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Delete Book</button>
+  </form>
+  <a href="{% url 'home' %}"><button>Back to Home Page</button></a>
+{% endblock %}
