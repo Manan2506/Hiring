@@ -14,15 +14,15 @@ Before you can run this application locally, you will need to have the following
 To install the application and its dependencies, follow these steps:
 - Clone this repository to your local machine
 - Navigate to the project directory:
-    ```http
+    ```
     cd <project-directory>
     ```
 - Install the required python packages:
-    ```http
+    ```
     pip install -r requirements.txt
     ```
 - Create a PostgreSQL database for the application and update the DATABASES setting in settings.py to point to your database. For example:
-   ```http
+   ```
    DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -35,18 +35,18 @@ To install the application and its dependencies, follow these steps:
     }
    ```
 - Create the database tables.
-  ```http
+  ```
   python manage.py migrate
   ```
 - Load the initial data into the database.
-  ```http
+  ```
   python manage.py import_books /path/to/books.csv
   ```
 
 ## Usage
 
 1. Start the development server.
-  ```http
+  ```
   python manage.py runserver
   ```
 2. Open your web browser and go to http://localhost:8000/ to view the home page.
